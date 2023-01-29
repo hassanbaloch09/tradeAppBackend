@@ -40,4 +40,15 @@ router.get("/retrievePayment/:id", async (req, res) => {
   }
 });
 
+router.get("/test", async (req, res) => {
+  try {
+    res.send({ data: "hello" });
+    res.end();
+  } catch (e) {
+    console.log(e.message);
+    res.send({ error: e.message });
+    res.end();
+  }
+});
+
 export default router;
